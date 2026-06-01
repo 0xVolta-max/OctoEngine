@@ -12,6 +12,7 @@
     "build": "npm run build --workspaces",
     "docs:check": "node scripts/check-docs.mjs",
     "octo": "node --experimental-strip-types scripts/octoengine.mjs",
+    "smoke:claude": "NODE_NO_WARNINGS=1 node --experimental-strip-types scripts/claude-code-smoke.mjs",
     "validate:schemas": "node scripts/validate-schemas.mjs",
     "test": "node --experimental-strip-types --test \"packages/**/*.test.mjs\" \"test/**/*.test.mjs\"",
     "format": "prettier --write ."

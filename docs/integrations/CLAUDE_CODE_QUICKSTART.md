@@ -29,10 +29,11 @@ The example config routes model aliases to `http://localhost:11434`, so that bac
 cd "/Volumes/SSD 1TB Portabel 1/Dev/OctoEngine"
 npm run build
 npm test
+NODE_NO_WARNINGS=1 npm --silent run smoke:claude
 NODE_NO_WARNINGS=1 npm --silent run octo -- gsd run --json
 ```
 
-The last command prints the workflow payload Claude Code should use for the smoke test.
+The smoke command verifies local readiness. The last command prints the workflow payload Claude Code should use for the smoke test.
 
 ## First Prompt
 
