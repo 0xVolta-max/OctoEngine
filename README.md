@@ -1,5 +1,7 @@
 # OctoEngine
 
+[![CI](https://github.com/0xVolta-max/OctoEngine/actions/workflows/ci.yml/badge.svg)](https://github.com/0xVolta-max/OctoEngine/actions/workflows/ci.yml)
+
 **OctoEngine** is an open-source Agent Engineering Control Plane.
 
 It turns persona-based engineering guidance into an orchestrated, verifiable, multi-agent operating system for AI-native software delivery.
