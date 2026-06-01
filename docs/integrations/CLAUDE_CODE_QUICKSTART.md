@@ -16,7 +16,7 @@ Use this path for the first OctoEngine smoke test. It keeps Claude Code as the e
 Use an existing LiteLLM service if one is already running. For a local smoke test, start a proxy from the example config:
 
 ```bash
-cd "/Volumes/SSD 1TB Portabel 1/Dev/OctoEngine"
+cd /path/to/octoengine
 export LITELLM_MASTER_KEY="sk-local-dev"
 litellm --config adapters/litellm/litellm-config.example.yaml --port 4100
 ```
@@ -26,7 +26,7 @@ The example config routes model aliases to `http://localhost:11434`, so that bac
 ## Prepare OctoEngine
 
 ```bash
-cd "/Volumes/SSD 1TB Portabel 1/Dev/OctoEngine"
+cd /path/to/octoengine
 npm run build
 npm test
 NODE_NO_WARNINGS=1 npm --silent run smoke:claude
@@ -48,7 +48,7 @@ Paste this text into Claude Code after launch. For a full realization pass, use 
 ## Launch Claude Code Through LiteLLM
 
 ```bash
-cd "/Volumes/SSD 1TB Portabel 1/Dev/OctoEngine"
+cd /path/to/octoengine
 export LITELLM_BASE_URL="http://localhost:4100"
 export LITELLM_MASTER_KEY="sk-local-dev"
 source adapters/litellm/claude-code-launchers.sh

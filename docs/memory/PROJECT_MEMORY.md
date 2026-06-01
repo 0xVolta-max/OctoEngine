@@ -8,7 +8,7 @@ OctoEngine is an open-source Agent Engineering Control Plane. It turns persona-b
 
 - GitHub: `https://github.com/0xVolta-max/OctoEngine`
 - Initial release: `v0.1.0`
-- Local repo: `/Volumes/SSD 1TB Portabel 1/Dev/OctoEngine`
+- Local repo path varies by workstation.
 
 ## Active Development Surface
 
