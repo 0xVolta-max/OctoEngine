@@ -28,7 +28,10 @@ OctoEngine is an open-source Agent Engineering Control Plane. It turns persona-b
 
 - Local graph output: `graphify-out/`
 - `graphify-out/` is ignored and not committed.
-- Current graph is AST/code best-effort because semantic Graphify needs `MOONSHOT_API_KEY` or `ANTHROPIC_API_KEY`.
+- Full semantic extraction runs through the local LiteLLM-Kimi wrapper:
+  `python3 /Users/bjornritzmann/Documents/Codex/2026-06-01/aionui-ist-jetzt-installiert-es-fehlen/work/graphify_litellm_kimi.py extract . --out .`
+- Latest semantic run: 30 nodes, 40 links, 12 communities.
+- One semantic chunk returned invalid JSON and was skipped; graph remains usable but not complete.
 - Refresh command: `graphify update . --force`
 
 ## Obsidian Notes
