@@ -1,0 +1,16 @@
+id: "gsd-review"
+name: "GSD Review"
+description: "Review architecture, QA, frontend, and documentation quality."
+stages:
+  - diff_review
+  - architecture_review
+  - frontend_review
+  - qa_review
+  - risk_report
+agents:
+  - qa-verification-agent
+  - frontend-taste-agent
+  - impeccable-reviewer-agent
+  - emil-kovalski-director-agent
+write_allowed: false
+requires_approval: false

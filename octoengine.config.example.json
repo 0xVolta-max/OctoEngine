@@ -1,0 +1,29 @@
+{
+  "project": {
+    "name": "octoengine",
+    "mode": "development"
+  },
+  "governance": {
+    "engineering_os": true,
+    "verification_ladder": true,
+    "destructive_actions_require_confirmation": true
+  },
+  "model_roles": {
+    "opusplan": "opusplan",
+    "implementer": "implementer",
+    "fast_cloud": "fast-cloud",
+    "fast_local": "fast-local",
+    "vision": "vision"
+  },
+  "mcp_policy": {
+    "default_access": "read_only",
+    "destructive_requires_confirmation": true
+  },
+  "workspace": {
+    "primary_ui": "aionui",
+    "compatibility_ui": [
+      "claude-desktop",
+      "cli"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+model_list:
+  - model_name: opusplan
+    litellm_params:
+      model: ollama/deepseek-v4-pro:cloud
+      api_base: http://localhost:11434
+
+  - model_name: implementer
+    litellm_params:
+      model: ollama/kimi-k2.6:cloud
+      api_base: http://localhost:11434
+
+  - model_name: fast-cloud
+    litellm_params:
+      model: ollama/nemotron-3-nano:30b-cloud
+      api_base: http://localhost:11434
+
+  - model_name: fast-local
+    litellm_params:
+      model: ollama/gemma4:latest
+      api_base: http://localhost:11434
+
+  - model_name: vision
+    litellm_params:
+      model: ollama/nemotron-3-super:cloud
+      api_base: http://localhost:11434

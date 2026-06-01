@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OctoEngine Workflow",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "stages",
+    "agents"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "write_allowed": {
+      "type": "boolean"
+    },
+    "requires_approval": {
+      "type": "boolean"
+    }
+  }
+}

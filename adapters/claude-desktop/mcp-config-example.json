@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "octoengine": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/octoengine/packages/gsd-router/dist/index.js"
+      ],
+      "env": {
+        "OCTOENGINE_CONFIG": "/absolute/path/to/octoengine/octoengine.config.json",
+        "LITELLM_BASE_URL": "http://localhost:4100",
+        "LITELLM_MASTER_KEY": "sk-local-dev"
+      }
+    }
+  }
+}

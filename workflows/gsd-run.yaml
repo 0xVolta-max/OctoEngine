@@ -1,0 +1,13 @@
+id: "gsd-run"
+name: "GSD Run"
+description: "Execute an approved implementation plan within scope."
+stages:
+  - load_approved_plan
+  - assign_implementation
+  - execute_changes
+  - collect_diff
+  - handoff_to_review
+agents:
+  - caveman-inspector-agent
+write_allowed: true
+requires_approval: false

@@ -1,0 +1,15 @@
+id: "gsd-plan"
+name: "GSD Plan"
+description: "Create a scoped implementation plan without modifying files."
+stages:
+  - memory_retrieval
+  - scope_graph
+  - targeted_inspection
+  - plan_generation
+  - approval_gate
+agents:
+  - obsidian-memory-agent
+  - graphify-scope-agent
+  - caveman-inspector-agent
+write_allowed: false
+requires_approval: true

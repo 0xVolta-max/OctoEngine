@@ -1,0 +1,72 @@
+{
+  "nodes": [
+    {
+      "id": "octogen",
+      "type": "orchestrator",
+      "label": "Octogen",
+      "status": "running"
+    },
+    {
+      "id": "engineering-os",
+      "type": "governance",
+      "label": "Engineering OS",
+      "status": "active"
+    },
+    {
+      "id": "graphify",
+      "type": "agent",
+      "label": "Graphify Scope Agent",
+      "status": "complete"
+    },
+    {
+      "id": "caveman",
+      "type": "agent",
+      "label": "Caveman Inspector",
+      "status": "running"
+    },
+    {
+      "id": "obsidian",
+      "type": "mcp",
+      "label": "Obsidian MCP",
+      "status": "active"
+    },
+    {
+      "id": "litellm",
+      "type": "router",
+      "label": "LiteLLM",
+      "status": "active"
+    }
+  ],
+  "edges": [
+    {
+      "source": "engineering-os",
+      "target": "octogen",
+      "type": "governs"
+    },
+    {
+      "source": "octogen",
+      "target": "graphify",
+      "type": "assigns"
+    },
+    {
+      "source": "octogen",
+      "target": "caveman",
+      "type": "assigns"
+    },
+    {
+      "source": "caveman",
+      "target": "obsidian",
+      "type": "uses"
+    },
+    {
+      "source": "octogen",
+      "target": "litellm",
+      "type": "routes_models"
+    }
+  ],
+  "events": [],
+  "verification": {
+    "level": 1,
+    "status": "in_progress"
+  }
+}

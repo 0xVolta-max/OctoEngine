@@ -1,0 +1,12 @@
+id: "gsd-pause-work"
+name: "GSD Pause Work"
+description: "Pause safely when context, verification, or scope is insufficient."
+stages:
+  - capture_state
+  - record_blockers
+  - document_next_steps
+  - handoff_summary
+agents:
+  - docs-compression-agent
+write_allowed: true
+requires_approval: false

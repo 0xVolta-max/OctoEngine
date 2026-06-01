@@ -1,0 +1,14 @@
+id: "gsd-ship"
+name: "GSD Ship"
+description: "Run verification ladder, update docs, and create final ship report."
+stages:
+  - verification_ladder
+  - docs_compression
+  - ship_report
+  - pause_or_ship_decision
+agents:
+  - qa-verification-agent
+  - docs-compression-agent
+  - obsidian-memory-agent
+write_allowed: true
+requires_approval: true
