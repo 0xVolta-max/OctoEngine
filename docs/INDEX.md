@@ -43,6 +43,14 @@
 
 - [GSD Workflows](./workflows/GSD_WORKFLOWS.md)
 
+## Integrations
+
+- [Claude Code Quickstart](./integrations/CLAUDE_CODE_QUICKSTART.md)
+
 ## Prompts
 
 - [Meta Prompts](./prompts/META_PROMPTS.md)
+
+## Memory
+
+- [Project Memory](./memory/PROJECT_MEMORY.md)
