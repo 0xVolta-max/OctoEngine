@@ -14,7 +14,7 @@ Core architecture:
 - Engineering OS = governance
 - Octogen = orchestration
 - Hermes = execution/runtime adapter
-- GSD Router = workflow command layer
+- Octo Router = workflow command layer
 - LiteLLM = model routing
 - MCP = tool integration
 - AionUI = primary workspace UI
@@ -38,7 +38,7 @@ Implementation order:
 3. Add type definitions for agents, workflows, events, workspace graph.
 4. Add static registry loader.
 5. Add workflow parser.
-6. Add CLI stub for gsd commands.
+6. Add CLI stub for Octo commands.
 7. Add workspace graph JSON generator stub.
 8. Add docs validation.
 9. Run verification.

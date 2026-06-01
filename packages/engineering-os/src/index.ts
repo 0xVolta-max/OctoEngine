@@ -1,6 +1,6 @@
 /**
  * engineering-os
- * Governance rules, verification ladder, and GSD standard.
+ * Governance rules, verification ladder, and Octo Workflow standard.
  */
 
 export const packageName = "@octoengine/engineering-os";

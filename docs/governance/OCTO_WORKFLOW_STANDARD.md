@@ -1,16 +1,16 @@
-# GSD Standard
+# Octo Workflow Standard
 
-GSD means **Get Shit Done**.
+Octo Workflows define the command and delivery standard.
 
 In OctoEngine it is not a model alias. It is the workflow standard for moving from intent to verified completion.
 
-## GSD Command Set
+## Octo Command Set
 
-- `/gsd-plan`
-- `/gsd-run`
-- `/gsd-review`
-- `/gsd-ship`
-- `/gsd-pause-work`
+- `/octo-plan`
+- `/octo-run`
+- `/octo-review`
+- `/octo-ship`
+- `/octo-pause-work`
 
 ## Standard Workflow Shape
 
@@ -34,7 +34,7 @@ Documentation
 Ship or Pause
 ```
 
-## GSD Rules
+## Octo Workflow Rules
 
 1. Never skip scope analysis for non-trivial changes.
 2. Never edit before inspection.

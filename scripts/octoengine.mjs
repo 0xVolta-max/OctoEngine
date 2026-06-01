@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import {
-  buildGsdRunPayload,
-  listGsdWorkflows,
-} from "../packages/gsd-router/src/index.ts";
+  buildOctoRunPayload,
+  listOctoWorkflows,
+} from "../packages/octo-router/src/index.ts";
 
 const args = process.argv.slice(2);
 
@@ -34,11 +34,11 @@ function run(argv) {
   }
 
   if (cleanArgs[0] === "claude-test") {
-    return buildGsdRunPayload("gsd run").claudeCode.firstTestPrompt;
+    return buildOctoRunPayload("octo-run").claudeCode.firstTestPrompt;
   }
 
   if (cleanArgs[0] === "workflows") {
-    const workflows = listGsdWorkflows();
+    const workflows = listOctoWorkflows();
     return json
       ? { workflows }
       : workflows
@@ -46,12 +46,19 @@ function run(argv) {
           .join("\n");
   }
 
-  if (cleanArgs[0] === "gsd") {
+  if (cleanArgs[0]?.startsWith("octo-")) {
+    const payload = buildOctoRunPayload(cleanArgs[0]);
+    return json ? payload : renderWorkflow(payload);
+  }
+
+  if (cleanArgs[0] === "octo" || cleanArgs[0] === "gsd") {
     const workflowName = cleanArgs[1];
     if (!workflowName)
-      throw new Error("Usage: octoengine gsd <plan|run|review|ship> [--json]");
+      throw new Error(
+        "Usage: octoengine octo <plan|run|review|ship|pause-work> [--json]",
+      );
 
-    const payload = buildGsdRunPayload(`gsd ${workflowName}`);
+    const payload = buildOctoRunPayload(`octo ${workflowName}`);
 
     return json ? payload : renderWorkflow(payload);
   }
@@ -78,7 +85,8 @@ function helpText() {
     "",
     "Commands:",
     "  octoengine workflows [--json]",
-    "  octoengine gsd <plan|run|review|ship> [--json]",
+    "  octoengine octo-<plan|run|review|ship|pause-work> [--json]",
+    "  octoengine octo <plan|run|review|ship|pause-work> [--json]",
     "  octoengine claude-test",
   ].join("\n");
 }

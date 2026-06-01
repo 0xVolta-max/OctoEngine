@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import fs from "node:fs";
-import { buildGsdRunPayload } from "../packages/gsd-router/src/index.ts";
+import { buildOctoRunPayload } from "../packages/octo-router/src/index.ts";
 
 const launcherPath = "adapters/litellm/claude-code-launchers.sh";
 const quickstartPath = "docs/integrations/CLAUDE_CODE_QUICKSTART.md";
@@ -11,12 +11,12 @@ try {
   assertFile(launcherPath);
   assertFile(quickstartPath);
 
-  const payload = buildGsdRunPayload("gsd run");
+  const payload = buildOctoRunPayload("octo-run");
   if (!payload.claudeCode.ready) {
     throw new Error("Claude Code payload is not marked ready.");
   }
-  if (!payload.claudeCode.firstTestPrompt.includes("Workflow: GSD Run")) {
-    throw new Error("Claude Code prompt does not describe GSD Run.");
+  if (!payload.claudeCode.firstTestPrompt.includes("Workflow: Octo Run")) {
+    throw new Error("Claude Code prompt does not describe Octo Run.");
   }
 
   process.stdout.write(

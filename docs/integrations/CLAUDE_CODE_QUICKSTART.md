@@ -30,7 +30,7 @@ cd /path/to/octoengine
 npm run build
 npm test
 NODE_NO_WARNINGS=1 npm --silent run smoke:claude
-NODE_NO_WARNINGS=1 npm --silent run octo -- gsd run --json
+NODE_NO_WARNINGS=1 npm --silent run octo -- octo-run --json
 ```
 
 The smoke command verifies local readiness. The last command prints the workflow payload Claude Code should use for the smoke test.
@@ -61,5 +61,5 @@ Use the real local `LITELLM_MASTER_KEY` value if it differs from `sk-local-dev`.
 
 - Claude Code opens from the repository root.
 - The model selection shows the LiteLLM `opusplan` route.
-- `NODE_NO_WARNINGS=1 npm --silent run octo -- gsd run --json` returns a workflow with `claudeCode.ready: true`.
+- `NODE_NO_WARNINGS=1 npm --silent run octo -- octo-run --json` returns a workflow with `claudeCode.ready: true`.
 - Claude Code follows the workflow stages without contacting external systems or performing destructive actions.

@@ -1,6 +1,6 @@
-# `gsd-router`
+# `octo-router`
 
-Command/workflow entrypoint for GSD workflows.
+Command/workflow entrypoint for Octo workflows.
 
 ## Status
 

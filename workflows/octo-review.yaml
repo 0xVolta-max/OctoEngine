@@ -1,5 +1,5 @@
-id: "gsd-review"
-name: "GSD Review"
+id: "octo-review"
+name: "Octo Review"
 description: "Review architecture, QA, frontend, and documentation quality."
 stages:
   - diff_review

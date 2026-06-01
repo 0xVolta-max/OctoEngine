@@ -8,7 +8,7 @@ const execFileAsync = promisify(execFile);
 test("schema validation checks workflow files", async () => {
   const { stdout } = await execFileAsync("npm", ["run", "validate:schemas"]);
 
-  assert.match(stdout, /valid workflow: workflows\/gsd-run.yaml/);
-  assert.match(stdout, /valid workflow: workflows\/gsd-pause-work.yaml/);
+  assert.match(stdout, /valid workflow: workflows\/octo-run.yaml/);
+  assert.match(stdout, /valid workflow: workflows\/octo-pause-work.yaml/);
   assert.match(stdout, /workflow registry matches workflow files/);
 });

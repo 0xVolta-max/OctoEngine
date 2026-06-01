@@ -1,5 +1,5 @@
-id: "gsd-plan"
-name: "GSD Plan"
+id: "octo-plan"
+name: "Octo Plan"
 description: "Create a scoped implementation plan without modifying files."
 stages:
   - memory_retrieval

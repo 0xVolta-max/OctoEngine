@@ -4,7 +4,7 @@
   "type": "module",
   "private": false,
   "license": "MIT",
-  "description": "Governance rules, verification ladder, and GSD standard.",
+  "description": "Governance rules, verification ladder, and Octo Workflow standard.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

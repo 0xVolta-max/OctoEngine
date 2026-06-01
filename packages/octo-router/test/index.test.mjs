@@ -4,15 +4,15 @@ import fs from "node:fs";
 import path from "node:path";
 
 import {
-  buildGsdRunPayload,
-  listGsdWorkflows,
-  resolveGsdWorkflow,
+  buildOctoRunPayload,
+  listOctoWorkflows,
+  resolveOctoWorkflow,
 } from "../src/index.ts";
 
-test("resolves common GSD command forms to workflow metadata", () => {
-  const workflow = resolveGsdWorkflow("gsd run");
+test("resolves canonical Octo command forms to workflow metadata", () => {
+  const workflow = resolveOctoWorkflow("octo-run");
 
-  assert.equal(workflow.id, "gsd-run");
+  assert.equal(workflow.id, "octo-run");
   assert.equal(workflow.writeAllowed, true);
   assert.equal(workflow.requiresApproval, false);
   assert.deepEqual(workflow.stages, [
@@ -26,23 +26,23 @@ test("resolves common GSD command forms to workflow metadata", () => {
 
 test("lists workflows in stable command order", () => {
   assert.deepEqual(
-    listGsdWorkflows().map((workflow) => workflow.id),
-    ["gsd-plan", "gsd-run", "gsd-review", "gsd-ship", "gsd-pause-work"],
+    listOctoWorkflows().map((workflow) => workflow.id),
+    ["octo-plan", "octo-run", "octo-review", "octo-ship", "octo-pause-work"],
   );
 });
 
 test("resolves pause-work workflow from documented command form", () => {
-  const workflow = resolveGsdWorkflow("gsd pause-work");
+  const workflow = resolveOctoWorkflow("octo-pause-work");
 
-  assert.equal(workflow.id, "gsd-pause-work");
+  assert.equal(workflow.id, "octo-pause-work");
   assert.deepEqual(workflow.agents, ["docs-compression-agent"]);
 });
 
-test("builds a Claude Code ready GSD payload", () => {
-  const payload = buildGsdRunPayload("gsd run");
+test("builds a Claude Code ready Octo payload", () => {
+  const payload = buildOctoRunPayload("octo-run");
 
-  assert.equal(payload.command, "gsd run");
-  assert.equal(payload.workflow.id, "gsd-run");
+  assert.equal(payload.command, "octo-run");
+  assert.equal(payload.workflow.id, "octo-run");
   assert.equal(payload.claudeCode.ready, true);
   assert.match(
     payload.claudeCode.firstTestPrompt,
@@ -64,16 +64,22 @@ test("keeps router registry aligned with workflow YAML files", () => {
     .sort();
 
   assert.deepEqual(
-    listGsdWorkflows()
+    listOctoWorkflows()
       .map((workflow) => workflow.id)
       .sort(),
     workflowIds,
   );
 });
 
-test("rejects unknown GSD commands", () => {
+test("keeps legacy command aliases working", () => {
+  const workflow = resolveOctoWorkflow("gsd run");
+
+  assert.equal(workflow.id, "octo-run");
+});
+
+test("rejects unknown Octo commands", () => {
   assert.throws(
-    () => resolveGsdWorkflow("gsd improvise"),
-    /Unknown GSD workflow/,
+    () => resolveOctoWorkflow("octo-improvise"),
+    /Unknown Octo workflow/,
   );
 });

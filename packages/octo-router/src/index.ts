@@ -1,11 +1,11 @@
 /**
- * gsd-router
- * Command/workflow entrypoint for GSD workflows.
+ * octo-router
+ * Command/workflow entrypoint for Octo workflows.
  */
 
-export const packageName = "@octoengine/gsd-router";
+export const packageName = "@octoengine/octo-router";
 
-export type GsdWorkflow = {
+export type OctoWorkflow = {
   id: string;
   name: string;
   description: string;
@@ -15,19 +15,22 @@ export type GsdWorkflow = {
   requiresApproval: boolean;
 };
 
-export type GsdRunPayload = {
+export type OctoRunPayload = {
   command: string;
-  workflow: GsdWorkflow;
+  workflow: OctoWorkflow;
   claudeCode: {
     ready: true;
     firstTestPrompt: string;
   };
 };
 
-const workflows: GsdWorkflow[] = [
+export type GsdWorkflow = OctoWorkflow;
+export type GsdRunPayload = OctoRunPayload;
+
+const workflows: OctoWorkflow[] = [
   {
-    id: "gsd-plan",
-    name: "GSD Plan",
+    id: "octo-plan",
+    name: "Octo Plan",
     description: "Create a scoped implementation plan without modifying files.",
     stages: [
       "memory_retrieval",
@@ -45,8 +48,8 @@ const workflows: GsdWorkflow[] = [
     requiresApproval: true,
   },
   {
-    id: "gsd-run",
-    name: "GSD Run",
+    id: "octo-run",
+    name: "Octo Run",
     description: "Execute an approved implementation plan within scope.",
     stages: [
       "load_approved_plan",
@@ -60,8 +63,8 @@ const workflows: GsdWorkflow[] = [
     requiresApproval: false,
   },
   {
-    id: "gsd-review",
-    name: "GSD Review",
+    id: "octo-review",
+    name: "Octo Review",
     description:
       "Review architecture, QA, frontend, and documentation quality.",
     stages: [
@@ -81,8 +84,8 @@ const workflows: GsdWorkflow[] = [
     requiresApproval: false,
   },
   {
-    id: "gsd-ship",
-    name: "GSD Ship",
+    id: "octo-ship",
+    name: "Octo Ship",
     description:
       "Run verification ladder, update docs, and create final ship report.",
     stages: [
@@ -100,8 +103,8 @@ const workflows: GsdWorkflow[] = [
     requiresApproval: true,
   },
   {
-    id: "gsd-pause-work",
-    name: "GSD Pause Work",
+    id: "octo-pause-work",
+    name: "Octo Pause Work",
     description:
       "Pause safely when context, verification, or scope is insufficient.",
     stages: [
@@ -116,7 +119,7 @@ const workflows: GsdWorkflow[] = [
   },
 ];
 
-export function listGsdWorkflows(): GsdWorkflow[] {
+export function listOctoWorkflows(): OctoWorkflow[] {
   return workflows.map((workflow) => ({
     ...workflow,
     stages: [...workflow.stages],
@@ -124,12 +127,12 @@ export function listGsdWorkflows(): GsdWorkflow[] {
   }));
 }
 
-export function resolveGsdWorkflow(command: string): GsdWorkflow {
+export function resolveOctoWorkflow(command: string): OctoWorkflow {
   const normalized = normalizeCommand(command);
   const workflow = workflows.find((candidate) => candidate.id === normalized);
 
   if (!workflow) {
-    throw new Error(`Unknown GSD workflow: ${command}`);
+    throw new Error(`Unknown Octo workflow: ${command}`);
   }
 
   return {
@@ -139,8 +142,8 @@ export function resolveGsdWorkflow(command: string): GsdWorkflow {
   };
 }
 
-export function buildGsdRunPayload(command: string): GsdRunPayload {
-  const workflow = resolveGsdWorkflow(command);
+export function buildOctoRunPayload(command: string): OctoRunPayload {
+  const workflow = resolveOctoWorkflow(command);
 
   return {
     command: normalizeCommandForDisplay(command),
@@ -152,19 +155,24 @@ export function buildGsdRunPayload(command: string): GsdRunPayload {
   };
 }
 
+export const listGsdWorkflows = listOctoWorkflows;
+export const resolveGsdWorkflow = resolveOctoWorkflow;
+export const buildGsdRunPayload = buildOctoRunPayload;
+
 function normalizeCommand(command: string): string {
   const trimmed = command.trim().toLowerCase();
-  if (trimmed.startsWith("gsd-")) return trimmed;
-  if (trimmed.startsWith("gsd ")) return `gsd-${trimmed.slice(4).trim()}`;
-  return `gsd-${trimmed}`;
+  if (trimmed.startsWith("octo-")) return trimmed;
+  if (trimmed.startsWith("octo ")) return `octo-${trimmed.slice(5).trim()}`;
+  if (trimmed.startsWith("gsd-")) return `octo-${trimmed.slice("gsd-".length)}`;
+  if (trimmed.startsWith("gsd ")) return `octo-${trimmed.slice(4).trim()}`;
+  return `octo-${trimmed}`;
 }
 
 function normalizeCommandForDisplay(command: string): string {
-  const normalized = normalizeCommand(command);
-  return normalized.replace(/^gsd-/, "gsd ");
+  return normalizeCommand(command);
 }
 
-function buildFirstTestPrompt(workflow: GsdWorkflow): string {
+function buildFirstTestPrompt(workflow: OctoWorkflow): string {
   return [
     "OctoEngine Claude Code smoke test",
     "",

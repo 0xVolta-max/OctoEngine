@@ -55,11 +55,11 @@ It must provide:
 
 ### Required Workflow Specs
 
-- `/gsd-plan`
-- `/gsd-run`
-- `/gsd-review`
-- `/gsd-ship`
-- `/gsd-pause-work`
+- `/octo-plan`
+- `/octo-run`
+- `/octo-review`
+- `/octo-ship`
+- `/octo-pause-work`
 
 ### Required Adapter Specs
 
@@ -76,7 +76,7 @@ The MVP is complete when:
 
 - all required docs exist,
 - all core agents have contracts,
-- all GSD workflows have lifecycle definitions,
+- all Octo workflows have lifecycle definitions,
 - AionUI workspace schema exists,
 - Claude Desktop MCP compatibility example exists,
 - LiteLLM model role mapping exists,

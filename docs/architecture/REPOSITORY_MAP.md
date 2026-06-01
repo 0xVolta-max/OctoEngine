@@ -11,7 +11,7 @@ octoengine/
   packages/
     engineering-os/
     octogen/
-    gsd-router/
+    octo-router/
     workspace-core/
     litellm-adapter/
     mcp-adapter/
@@ -33,7 +33,7 @@ If the project grows, split into:
 octoengine-core
 engineering-os
 octogen
-gsd-router
+octo-router
 octo-workspace
 octo-agents
 octo-mcp

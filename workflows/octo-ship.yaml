@@ -1,5 +1,5 @@
-id: "gsd-ship"
-name: "GSD Ship"
+id: "octo-ship"
+name: "Octo Ship"
 description: "Run verification ladder, update docs, and create final ship report."
 stages:
   - verification_ladder

@@ -3,7 +3,7 @@
 A developer can run:
 
 ```text
-/gsd-plan
+/octo-plan
 ```
 
 or trigger the equivalent action in AionUI.

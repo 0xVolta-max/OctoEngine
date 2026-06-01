@@ -11,7 +11,7 @@ OctoEngine unifies:
 - **Engineering OS** as governance and delivery standard
 - **Octogen** as orchestration and agent management layer
 - **Hermes** as optional execution/runtime adapter
-- **GSD Router** as command and workflow entrypoint
+- **Octo Router** as command and workflow entrypoint
 - **LiteLLM** as model routing layer
 - **MCP ecosystem** as tool layer
 - **AionUI** as primary visual workspace
@@ -61,7 +61,7 @@ The repository includes a local smoke-test CLI:
 
 ```bash
 NODE_NO_WARNINGS=1 npm --silent run octo -- workflows --json
-NODE_NO_WARNINGS=1 npm --silent run octo -- gsd run --json
+NODE_NO_WARNINGS=1 npm --silent run octo -- octo-run --json
 NODE_NO_WARNINGS=1 npm --silent run octo -- claude-test
 ```
 
@@ -75,11 +75,11 @@ See [Claude Code Quickstart](./docs/integrations/CLAUDE_CODE_QUICKSTART.md) for 
 
 ## Workflow Commands
 
-- `gsd-plan`
-- `gsd-run`
-- `gsd-review`
-- `gsd-ship`
-- `gsd-pause-work`
+- `octo-plan`
+- `octo-run`
+- `octo-review`
+- `octo-ship`
+- `octo-pause-work`
 
 `npm run validate:schemas` checks JSON schemas, workflow YAML files, and workflow registry consistency.
 
@@ -97,7 +97,7 @@ Keep internal packages modular so they can later be extracted:
 packages/
   engineering-os/
   octogen/
-  gsd-router/
+  octo-router/
   workspace-core/
   litellm-adapter/
   mcp-adapter/

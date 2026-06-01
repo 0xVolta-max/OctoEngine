@@ -1,5 +1,5 @@
-id: "gsd-pause-work"
-name: "GSD Pause Work"
+id: "octo-pause-work"
+name: "Octo Pause Work"
 description: "Pause safely when context, verification, or scope is insufficient."
 stages:
   - capture_state

@@ -1,10 +1,10 @@
 {
-  "name": "@octoengine/gsd-router",
+  "name": "@octoengine/octo-router",
   "version": "0.1.0",
   "type": "module",
   "private": false,
   "license": "MIT",
-  "description": "Command/workflow entrypoint for GSD workflows.",
+  "description": "Command/workflow entrypoint for Octo workflows.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

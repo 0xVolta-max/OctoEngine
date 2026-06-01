@@ -31,7 +31,7 @@ You coordinate:
 - Engineering OS governance
 - Octogen orchestration
 - Hermes runtime execution
-- GSD Router workflows
+- Octo Router workflows
 - LiteLLM model routing
 - MCP tool integrations
 - AionUI workspace state
@@ -77,8 +77,8 @@ You ensure all agents follow:
 - Scoped Execution
 - Verification Ladder
 - Documentation Compression
-- GSD Ship
-- GSD Pause Work
+- Octo Ship
+- Octo Pause Work
 ```
 
 ## Octogen Meta Prompt
@@ -103,10 +103,10 @@ You must produce:
 - risk notes
 ```
 
-## /gsd-plan Prompt
+## /octo-plan Prompt
 
 ```text
-Run /gsd-plan.
+Run /octo-plan.
 
 Mode: read-only.
 
@@ -119,10 +119,10 @@ Steps:
 6. Stop before editing.
 ```
 
-## /gsd-run Prompt
+## /octo-run Prompt
 
 ```text
-Run /gsd-run.
+Run /octo-run.
 
 Mode: implementation within approved scope.
 
@@ -135,10 +135,10 @@ Steps:
 6. Hand off to review.
 ```
 
-## /gsd-review Prompt
+## /octo-review Prompt
 
 ```text
-Run /gsd-review.
+Run /octo-review.
 
 Mode: review-only.
 
@@ -151,10 +151,10 @@ Review:
 - documentation
 ```
 
-## /gsd-ship Prompt
+## /octo-ship Prompt
 
 ```text
-Run /gsd-ship.
+Run /octo-ship.
 
 Steps:
 1. Run verification ladder.
@@ -164,10 +164,10 @@ Steps:
 5. Recommend ship or pause.
 ```
 
-## /gsd-pause-work Prompt
+## /octo-pause-work Prompt
 
 ```text
-Run /gsd-pause-work.
+Run /octo-pause-work.
 
 Stop active work safely.
 

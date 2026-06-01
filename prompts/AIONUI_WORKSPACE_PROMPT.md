@@ -23,6 +23,6 @@ Data sources:
 Rules:
 - AionUI renders state.
 - OctoEngine owns orchestration.
-- UI actions call GSD Router commands.
+- UI actions call Octo Router commands.
 - No orchestration logic should be duplicated in the UI.
 ```

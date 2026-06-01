@@ -10,7 +10,7 @@ AionUI should:
 - render graph views,
 - render kanban views,
 - show agent activity,
-- trigger GSD workflows,
+- trigger Octo workflows,
 - expose command and chat interfaces.
 
 AionUI should not own orchestration logic.
@@ -22,7 +22,7 @@ AionUI
   ↓
 OctoEngine Workspace API
   ↓
-GSD Router
+Octo Router
   ↓
 Octogen
 ```

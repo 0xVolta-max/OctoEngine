@@ -11,7 +11,7 @@ A workflow is a named sequence of stages.
 Example:
 
 ```text
-gsd-plan
+octo-plan
 ```
 
 ### Task

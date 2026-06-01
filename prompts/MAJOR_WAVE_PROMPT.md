@@ -14,7 +14,7 @@ Apply:
 - orchestrator-owned implementation
 - verification ladder
 - concise docs compression
-- gsd-ship or gsd-pause-work
+- octo-ship or octo-pause-work
 
 Do not edit before plan approval.
 

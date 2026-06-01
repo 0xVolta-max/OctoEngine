@@ -3,7 +3,7 @@
     "octoengine": {
       "command": "node",
       "args": [
-        "/absolute/path/to/octoengine/packages/gsd-router/dist/index.js"
+        "/absolute/path/to/octoengine/packages/octo-router/dist/index.js"
       ],
       "env": {
         "OCTOENGINE_CONFIG": "/absolute/path/to/octoengine/octoengine.config.json",

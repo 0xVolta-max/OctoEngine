@@ -108,7 +108,7 @@ Represents Obsidian docs, memory entries, decisions, or project facts.
 
 ### Workflow Card
 
-Represents one GSD workflow execution.
+Represents one Octo workflow execution.
 
 ### Activity Event
 
@@ -116,12 +116,12 @@ Represents agent messages, tool calls, state changes, verification results, and 
 
 ## Status Colors
 
-| Status | Color |
-|---|---|
-| Planned | Blue |
-| Running | Lime |
-| Waiting | Yellow |
-| Review | Purple |
-| Failed | Red |
-| Complete | Green |
+| Status        | Color  |
+| ------------- | ------ |
+| Planned       | Blue   |
+| Running       | Lime   |
+| Waiting       | Yellow |
+| Review        | Purple |
+| Failed        | Red    |
+| Complete      | Green  |
 | External Tool | Orange |

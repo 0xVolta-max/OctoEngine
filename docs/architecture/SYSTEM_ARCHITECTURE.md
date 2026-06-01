@@ -9,7 +9,7 @@ User / Developer
   ↓
 AionUI / CLI / Claude Desktop
   ↓
-GSD Router
+Octo Router
   ↓
 Octogen Orchestrator
   ↓
@@ -45,7 +45,7 @@ The UI layer must not own orchestration logic.
 
 ### Command Layer
 
-GSD Router translates user intent into workflow invocations.
+Octo Router translates user intent into workflow invocations.
 
 ### Orchestration Layer
 

@@ -11,12 +11,12 @@ OctoEngine can support Basura through:
 - Frontend persona agents for Cyber Brutalism UI,
 - Mailcow MCP for mail infrastructure inspection,
 - Supabase MCP for database inspection,
-- GSD workflows for landing, dashboard, admin, and backend waves.
+- Octo workflows for landing, dashboard, admin, and backend waves.
 
 ## Example Workflow
 
 ```text
-/gsd-plan Improve Basura admin navigation
+/octo-plan Improve Basura admin navigation
   ↓
 Obsidian memory retrieves Basura design rules
   ↓
@@ -26,9 +26,9 @@ Caveman inspects relevant components
   ↓
 Octogen creates implementation plan
   ↓
-/gsd-run executes via implementer
+/octo-run executes via implementer
   ↓
-/gsd-review runs frontend + QA agents
+/octo-review runs frontend + QA agents
   ↓
-/gsd-ship verifies and updates docs
+/octo-ship verifies and updates docs
 ```

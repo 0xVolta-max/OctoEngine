@@ -16,7 +16,7 @@
 ## Governance
 
 - [Engineering OS](./governance/ENGINEERING_OS.md)
-- [GSD Standard](./governance/GSD_STANDARD.md)
+- [Octo Workflow Standard](./governance/OCTO_WORKFLOW_STANDARD.md)
 - [Verification Ladder](./governance/VERIFICATION_LADDER.md)
 - [Agent Constitution](./governance/AGENT_CONSTITUTION.md)
 
@@ -41,7 +41,7 @@
 
 ## Workflows
 
-- [GSD Workflows](./workflows/GSD_WORKFLOWS.md)
+- [Octo Workflows](./workflows/OCTO_WORKFLOWS.md)
 
 ## Integrations
 

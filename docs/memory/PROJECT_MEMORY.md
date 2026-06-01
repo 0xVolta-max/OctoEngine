@@ -13,7 +13,7 @@ OctoEngine is an open-source Agent Engineering Control Plane. It turns persona-b
 ## Active Development Surface
 
 - Root CLI: `npm run octo -- <command>`
-- First Claude Code smoke command: `npm run octo -- gsd run --json`
+- First Claude Code smoke command: `npm run octo -- octo-run --json`
 - Claude Code smoke prompt command: `npm run octo -- claude-test`
 - Quickstart: `docs/integrations/CLAUDE_CODE_QUICKSTART.md`
 

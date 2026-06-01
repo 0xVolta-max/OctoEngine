@@ -13,7 +13,7 @@ test("Claude Code smoke readiness command reports local prerequisites", async ()
   ]);
 
   assert.match(stdout, /Claude Code smoke readiness: ok/);
-  assert.match(stdout, /workflow: gsd-run/);
+  assert.match(stdout, /workflow: octo-run/);
   assert.match(stdout, /prompt: ready/);
   assert.match(stdout, /launcher: adapters\/litellm\/claude-code-launchers.sh/);
 });

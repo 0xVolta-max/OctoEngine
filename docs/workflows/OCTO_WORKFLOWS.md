@@ -1,8 +1,8 @@
-# GSD Workflows
+# Octo Workflows
 
-GSD is OctoEngine's delivery workflow standard.
+Octo Workflows are OctoEngine's delivery workflow standard.
 
-## /gsd-plan
+## /octo-plan
 
 Purpose: create a scoped plan without modifying files.
 
@@ -14,7 +14,7 @@ Stages:
 4. plan generation
 5. approval gate
 
-## /gsd-run
+## /octo-run
 
 Purpose: execute an approved plan.
 
@@ -26,7 +26,7 @@ Stages:
 4. collect diff
 5. handoff to review
 
-## /gsd-review
+## /octo-review
 
 Purpose: review changes without implementation.
 
@@ -38,7 +38,7 @@ Stages:
 4. QA review
 5. risk report
 
-## /gsd-ship
+## /octo-ship
 
 Purpose: verify and prepare release.
 
@@ -49,7 +49,7 @@ Stages:
 3. ship report
 4. pause-or-ship decision
 
-## /gsd-pause-work
+## /octo-pause-work
 
 Purpose: stop safely and preserve context.
 

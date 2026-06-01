@@ -38,11 +38,11 @@ The implementation is not complete until verification evidence is collected.
 
 After meaningful work, update concise project memory and handoff notes.
 
-### 9. GSD Ship
+### 9. Octo Ship
 
 Shipping requires evidence, known gaps, next steps, and documentation status.
 
-### 10. GSD Pause Work
+### 10. Octo Pause Work
 
 When context, verification, or safety is insufficient, pause and report instead of guessing.
 
@@ -54,7 +54,7 @@ It governs:
 
 - Octogen orchestration,
 - Hermes execution,
-- GSD Router workflows,
+- Octo Router workflows,
 - agent contracts,
 - review gates,
 - documentation standards.

@@ -1,5 +1,5 @@
-id: "gsd-run"
-name: "GSD Run"
+id: "octo-run"
+name: "Octo Run"
 description: "Execute an approved implementation plan within scope."
 stages:
   - load_approved_plan

@@ -52,7 +52,7 @@ Open-source maintainers building agent workflows, MCP servers, model-router inte
 OctoEngine must:
 
 - define a professional governance layer for agentic engineering,
-- provide a command/workflow layer through GSD Router,
+- provide a command/workflow layer through Octo Router,
 - orchestrate agents through Octogen,
 - integrate runtime/execution systems such as Hermes,
 - support LiteLLM-based model routing,
@@ -85,9 +85,9 @@ Orchestration layer that decomposes tasks, assigns agents, manages dependencies,
 
 Runtime adapter for executing agent tasks, swarms, sessions, and parallel work where available.
 
-### GSD Router
+### Octo Router
 
-Command and workflow entrypoint for `/gsd-plan`, `/gsd-run`, `/gsd-review`, `/gsd-ship`, and `/gsd-pause-work`.
+Command and workflow entrypoint for `/octo-plan`, `/octo-run`, `/octo-review`, `/octo-ship`, and `/octo-pause-work`.
 
 ### LiteLLM Adapter
 
@@ -105,19 +105,19 @@ Visual representation layer for AionUI and compatible clients.
 
 ### US-001: Plan a scoped implementation
 
-As a developer, I want to run `/gsd-plan` so that the system analyzes scope, retrieves memory, inspects relevant files, and creates a safe plan before editing.
+As a developer, I want to run `/octo-plan` so that the system analyzes scope, retrieves memory, inspects relevant files, and creates a safe plan before editing.
 
 ### US-002: Execute an approved plan
 
-As a developer, I want to run `/gsd-run` so that implementation proceeds under Engineering OS constraints.
+As a developer, I want to run `/octo-run` so that implementation proceeds under Engineering OS constraints.
 
 ### US-003: Review a change
 
-As a developer, I want `/gsd-review` to run architecture, QA, frontend, and documentation review agents.
+As a developer, I want `/octo-review` to run architecture, QA, frontend, and documentation review agents.
 
 ### US-004: Ship safely
 
-As a developer, I want `/gsd-ship` to verify, document, and summarize a release.
+As a developer, I want `/octo-ship` to verify, document, and summarize a release.
 
 ### US-005: Visualize agent work
 

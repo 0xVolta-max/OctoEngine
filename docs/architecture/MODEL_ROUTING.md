@@ -4,7 +4,7 @@ LiteLLM is the preferred model routing layer.
 
 ## Role-Based Model Aliases
 
-Do not encode workflow names into model aliases. GSD is the workflow standard, not a model class.
+Do not encode workflow names into model aliases. Octo Workflows are the workflow standard, not a model class.
 
 Recommended role aliases:
 
@@ -38,13 +38,13 @@ model_list:
 
 ## Recommended Routing
 
-| Role | Preferred Model |
-|---|---|
-| Deep planning | `opusplan` |
-| Implementation | `implementer` |
-| Fast triage | `fast-cloud` |
-| Local/private compression | `fast-local` |
-| Visual/media analysis | `vision` |
+| Role                      | Preferred Model |
+| ------------------------- | --------------- |
+| Deep planning             | `opusplan`      |
+| Implementation            | `implementer`   |
+| Fast triage               | `fast-cloud`    |
+| Local/private compression | `fast-local`    |
+| Visual/media analysis     | `vision`        |
 
 ## Claude Code Through LiteLLM
 

@@ -2,13 +2,13 @@
 
 ## Command Palette Actions
 
-| AionUI Action | OctoEngine Command |
-|---|---|
-| Plan Task | `/gsd-plan` |
-| Run Approved Plan | `/gsd-run` |
-| Review Current Diff | `/gsd-review` |
-| Prepare Ship Report | `/gsd-ship` |
-| Pause Work | `/gsd-pause-work` |
+| AionUI Action       | OctoEngine Command |
+| ------------------- | ------------------ |
+| Plan Task           | `/octo-plan`       |
+| Run Approved Plan   | `/octo-run`        |
+| Review Current Diff | `/octo-review`     |
+| Prepare Ship Report | `/octo-ship`       |
+| Pause Work          | `/octo-pause-work` |
 
 ## Workspace Events
 
