@@ -30,7 +30,8 @@ test("CLI prints a Claude Code first-test prompt", async () => {
   ]);
 
   assert.match(stdout, /OctoEngine Claude Code smoke test/);
-  assert.match(stdout, /npm run octo -- gsd run --json/);
+  assert.match(stdout, /Workflow: GSD Run/);
+  assert.doesNotMatch(stdout, /Run this inside the repository/);
 });
 
 test("CLI lists workflows as JSON", async () => {

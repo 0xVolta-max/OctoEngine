@@ -10,4 +10,5 @@ test("schema validation checks workflow files", async () => {
 
   assert.match(stdout, /valid workflow: workflows\/gsd-run.yaml/);
   assert.match(stdout, /valid workflow: workflows\/gsd-pause-work.yaml/);
+  assert.match(stdout, /workflow registry matches workflow files/);
 });

@@ -5,6 +5,9 @@
   "description": "Open-source Agent Engineering Control Plane",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "npm run build --workspaces",
     "docs:check": "node scripts/check-docs.mjs",

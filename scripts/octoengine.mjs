@@ -34,7 +34,7 @@ function run(argv) {
   }
 
   if (cleanArgs[0] === "claude-test") {
-    return claudeCodeSmokePrompt();
+    return buildGsdRunPayload("gsd run").claudeCode.firstTestPrompt;
   }
 
   if (cleanArgs[0] === "workflows") {
@@ -69,20 +69,6 @@ function renderWorkflow(payload) {
     `stages: ${workflow.stages.join(" -> ")}`,
     "",
     payload.claudeCode.firstTestPrompt,
-  ].join("\n");
-}
-
-function claudeCodeSmokePrompt() {
-  return [
-    "OctoEngine Claude Code smoke test",
-    "",
-    "Run this inside the repository:",
-    "",
-    "```bash",
-    "npm run octo -- gsd run --json",
-    "```",
-    "",
-    "Then paste the JSON into Claude Code and ask it to follow the workflow under the listed safety rules.",
   ].join("\n");
 }
 

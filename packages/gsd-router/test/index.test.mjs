@@ -1,5 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
 
 import {
   buildGsdRunPayload,
@@ -45,6 +47,27 @@ test("builds a Claude Code ready GSD payload", () => {
   assert.match(
     payload.claudeCode.firstTestPrompt,
     /OctoEngine Claude Code smoke test/,
+  );
+});
+
+test("keeps router registry aligned with workflow YAML files", () => {
+  const workflowIds = fs
+    .readdirSync(path.resolve("workflows"))
+    .filter((file) => file.endsWith(".yaml"))
+    .map(
+      (file) =>
+        fs
+          .readFileSync(path.resolve("workflows", file), "utf8")
+          .match(/^id:\s+"?([^"\n]+)"?/m)?.[1],
+    )
+    .filter(Boolean)
+    .sort();
+
+  assert.deepEqual(
+    listGsdWorkflows()
+      .map((workflow) => workflow.id)
+      .sort(),
+    workflowIds,
   );
 });
 

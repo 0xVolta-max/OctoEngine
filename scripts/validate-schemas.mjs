@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const schemas = [
   "schemas/agent-contract.schema.json",
@@ -12,6 +13,8 @@ for (const schema of schemas) {
   console.log(`valid json: ${schema}`);
 }
 
+const workflows = [];
+
 for (const workflowFile of fs
   .readdirSync("workflows")
   .filter((file) => file.endsWith(".yaml"))
@@ -19,8 +22,12 @@ for (const workflowFile of fs
   const workflowPath = path.join("workflows", workflowFile);
   const workflow = parseWorkflowYaml(fs.readFileSync(workflowPath, "utf8"));
   validateWorkflow(workflow, workflowPath);
+  workflows.push(normalizeWorkflow(workflow));
   console.log(`valid workflow: ${workflowPath}`);
 }
+
+validateWorkflowRegistry(workflows);
+console.log("workflow registry matches workflow files");
 
 function parseWorkflowYaml(source) {
   const workflow = {};
@@ -66,7 +73,15 @@ function unquote(value) {
 }
 
 function validateWorkflow(workflow, workflowPath) {
-  const required = ["id", "name", "stages", "agents"];
+  const required = [
+    "id",
+    "name",
+    "description",
+    "stages",
+    "agents",
+    "write_allowed",
+    "requires_approval",
+  ];
   for (const key of required) {
     if (!(key in workflow))
       throw new Error(`${workflowPath}: missing required field ${key}`);
@@ -77,16 +92,9 @@ function validateWorkflow(workflow, workflowPath) {
   assertStringArray(workflow.stages, workflowPath, "stages");
   assertStringArray(workflow.agents, workflowPath, "agents");
 
-  if ("description" in workflow)
-    assertString(workflow.description, workflowPath, "description");
-  if ("write_allowed" in workflow)
-    assertBoolean(workflow.write_allowed, workflowPath, "write_allowed");
-  if ("requires_approval" in workflow)
-    assertBoolean(
-      workflow.requires_approval,
-      workflowPath,
-      "requires_approval",
-    );
+  assertString(workflow.description, workflowPath, "description");
+  assertBoolean(workflow.write_allowed, workflowPath, "write_allowed");
+  assertBoolean(workflow.requires_approval, workflowPath, "requires_approval");
 }
 
 function assertString(value, workflowPath, key) {
@@ -109,4 +117,44 @@ function assertBoolean(value, workflowPath, key) {
   if (typeof value !== "boolean") {
     throw new Error(`${workflowPath}: ${key} must be a boolean`);
   }
+}
+
+function normalizeWorkflow(workflow) {
+  return {
+    id: workflow.id,
+    name: workflow.name,
+    description: workflow.description,
+    stages: workflow.stages,
+    agents: workflow.agents,
+    writeAllowed: workflow.write_allowed,
+    requiresApproval: workflow.requires_approval,
+  };
+}
+
+function validateWorkflowRegistry(fileWorkflows) {
+  const output = execFileSync(
+    process.execPath,
+    [
+      "--experimental-strip-types",
+      "scripts/octoengine.mjs",
+      "workflows",
+      "--json",
+    ],
+    { encoding: "utf8", env: { ...process.env, NODE_NO_WARNINGS: "1" } },
+  );
+  const registryWorkflows = JSON.parse(output).workflows.sort(compareWorkflow);
+  const normalizedFileWorkflows = [...fileWorkflows].sort(compareWorkflow);
+
+  if (
+    JSON.stringify(registryWorkflows) !==
+    JSON.stringify(normalizedFileWorkflows)
+  ) {
+    throw new Error(
+      `workflow registry mismatch: registry=${JSON.stringify(registryWorkflows)} files=${JSON.stringify(normalizedFileWorkflows)}`,
+    );
+  }
+}
+
+function compareWorkflow(left, right) {
+  return left.id.localeCompare(right.id);
 }
